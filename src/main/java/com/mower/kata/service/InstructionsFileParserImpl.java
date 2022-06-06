@@ -11,6 +11,10 @@ import com.mower.kata.entities.Position;
 import com.mower.kata.exception.InvalidMowInstructionsException;
 import com.mower.kata.utils.ParserUtility;
 
+/**
+ * class parser allows to parse the file in the format specified
+ *
+ */
 public class InstructionsFileParserImpl implements InstructionsFileParser {
 
 	@Override

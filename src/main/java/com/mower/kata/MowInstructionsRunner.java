@@ -5,6 +5,10 @@ import com.mower.kata.exception.InvalidMowInstructionsException;
 import com.mower.kata.service.InstructionsFileParser;
 import com.mower.kata.service.InstructionsFileParserImpl;
 
+/**
+ * class runner allows to parse the file and move all mowers
+ *
+ */
 public class MowInstructionsRunner {
 
 	private MowInstructions mowInstructions;

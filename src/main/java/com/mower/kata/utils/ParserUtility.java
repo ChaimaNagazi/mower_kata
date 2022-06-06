@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import com.mower.kata.entities.Mower;
 import com.mower.kata.entities.Position;
 import com.mower.kata.enums.Action;
@@ -15,6 +14,7 @@ public class ParserUtility {
 
 	/**
 	 * parse and map position for TopRightCorner
+	 * 
 	 * @param firstLine
 	 * @return
 	 * @throws InvalidMowInstructionsException
@@ -29,6 +29,7 @@ public class ParserUtility {
 
 	/**
 	 * parse and map mowers
+	 * 
 	 * @param lines
 	 * @return
 	 * @throws InvalidMowInstructionsException
@@ -44,6 +45,7 @@ public class ParserUtility {
 
 	/**
 	 * split list to subList of size subListLength
+	 * 
 	 * @param sourceList ,subListLength
 	 * @return
 	 * @throws InvalidMowInstructionsException
@@ -62,6 +64,7 @@ public class ParserUtility {
 
 	/**
 	 * map from lines to mower
+	 * 
 	 * @param mowerLines
 	 * @return
 	 * @throws InvalidMowInstructionsException
@@ -80,6 +83,7 @@ public class ParserUtility {
 
 	/**
 	 * parse from string to position for mower position and for corner position
+	 * 
 	 * @param mowerLines
 	 * @return
 	 * @throws NumberFormatException

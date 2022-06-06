@@ -31,7 +31,6 @@ class MowInstructionsRunnerTest {
 
 		// Then
 		assertEquals(expected, result);
-
 	}
 
 	@Test
@@ -45,7 +44,6 @@ class MowInstructionsRunnerTest {
 
 		// Then
 		assertThrows(InvalidMowInstructionsException.class, executable);
-
 	}
 
 	@Test
@@ -59,7 +57,6 @@ class MowInstructionsRunnerTest {
 
 		// Then
 		assertThrows(InvalidMowInstructionsException.class, executable);
-
 	}
 
 	@Test
@@ -73,7 +70,6 @@ class MowInstructionsRunnerTest {
 
 		// Then
 		assertThrows(InvalidMowInstructionsException.class, executable);
-
 	}
 
 	@Test
@@ -101,7 +97,6 @@ class MowInstructionsRunnerTest {
 
 		// Then
 		assertThrows(InvalidMowInstructionsException.class, executable);
-
 	}
 
 	@Test
@@ -115,7 +110,6 @@ class MowInstructionsRunnerTest {
 
 		// Then
 		assertThrows(InvalidMowInstructionsException.class, executable);
-
 	}
 
 }
