@@ -58,8 +58,7 @@ public class Mower {
 	@Override
 	public String toString() {
 		StringBuilder strBuilder = new StringBuilder();
-		strBuilder.append(mowerPosition.getX()).append(" ").append(mowerPosition.getY()).append(" ")
-				.append(orientation);
+		strBuilder.append(mowerPosition).append(" ").append(orientation);
 		return strBuilder.toString();
 	}
 }

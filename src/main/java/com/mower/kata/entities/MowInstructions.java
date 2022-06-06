@@ -7,18 +7,18 @@ public class MowInstructions {
 	private List<Mower> mowers;
 	public static Position topRightCorner;
 
+	public void moveAllMowers() {
+		for (Mower mower : mowers) {
+			mower.move();
+		}
+	}
+
 	public List<Mower> getMowers() {
 		return mowers;
 	}
 
 	public void setMowers(List<Mower> mowers) {
 		this.mowers = mowers;
-	}
-
-	public void moveAllMowers() {
-		for (Mower mower : mowers) {
-			mower.move();
-		}
 	}
 
 	@Override
@@ -28,7 +28,7 @@ public class MowInstructions {
 			if (strBuilder.length() > 0) {
 				strBuilder.append(" ");
 			}
-			strBuilder.append(mower.toString());
+			strBuilder.append(mower);
 		}
 		return strBuilder.toString();
 	}

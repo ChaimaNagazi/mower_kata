@@ -89,4 +89,33 @@ class MowInstructionsRunnerTest {
 		assertThrows(InvalidMowInstructionsException.class, executable);
 
 	}
+
+	@Test
+	void runInstructions_should_throw_InvalidMowInstructionsException_when_wong_mowerlines()
+			throws InvalidMowInstructionsException {
+		// Given
+		String path = classLoader.getResource("instructions_wrong_lines.txt").getPath();
+
+		// When
+		Executable executable = () -> runner.runInstructions(path);
+
+		// Then
+		assertThrows(InvalidMowInstructionsException.class, executable);
+
+	}
+
+	@Test
+	void runInstructions_should_throw_InvalidMowInstructionsException_when_wong_cornerline()
+			throws InvalidMowInstructionsException {
+		// Given
+		String path = classLoader.getResource("instructions_wrong_corner_line.txt").getPath();
+
+		// When
+		Executable executable = () -> runner.runInstructions(path);
+
+		// Then
+		assertThrows(InvalidMowInstructionsException.class, executable);
+
+	}
+
 }

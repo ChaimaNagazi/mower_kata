@@ -15,7 +15,7 @@ public class InstructionsFileParserImpl implements InstructionsFileParser {
 
 	@Override
 	public MowInstructions parseInstructions(String path) throws InvalidMowInstructionsException {
-		MowInstructions mowInstructions = new MowInstructions();
+
 		List<String> lines = new ArrayList<>();
 		try {
 			lines = Files.readAllLines(new File(path).toPath());
@@ -24,14 +24,15 @@ public class InstructionsFileParserImpl implements InstructionsFileParser {
 		}
 
 		if (lines.size() > 0) {
-			Position topRightCorner = ParserUtility.parseTopRightRightCorner(lines.get(0));
+			Position topRightCorner = ParserUtility.parseTopRightCorner(lines.get(0));
 			List<Mower> mowers = ParserUtility.parseMowers(lines.subList(1, lines.size()));
-			MowInstructions.topRightCorner = topRightCorner;
+			MowInstructions mowInstructions = new MowInstructions();
+			mowInstructions.topRightCorner = topRightCorner;
 			mowInstructions.setMowers(mowers);
+			return mowInstructions;
 		} else {
 			throw new InvalidMowInstructionsException("Instructions File is empty!");
 		}
-		return mowInstructions;
 	}
 
 }

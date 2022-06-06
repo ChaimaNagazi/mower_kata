@@ -13,6 +13,41 @@ import com.mower.kata.exception.InvalidMowInstructionsException;
 
 public class ParserUtility {
 
+	/**
+	 * parse and map position for TopRightCorner
+	 * @param firstLine
+	 * @return
+	 * @throws InvalidMowInstructionsException
+	 */
+	public static Position parseTopRightCorner(String firstLine) throws InvalidMowInstructionsException {
+		try {
+			return parsePosition(firstLine);
+		} catch (Exception exception) {
+			throw new InvalidMowInstructionsException("Top right corner is missing !");
+		}
+	}
+
+	/**
+	 * parse and map mowers
+	 * @param lines
+	 * @return
+	 * @throws InvalidMowInstructionsException
+	 */
+	public static List<Mower> parseMowers(List<String> lines) throws InvalidMowInstructionsException {
+		List<Mower> mowers = new ArrayList<>();
+		List<List<String>> mowerLines = ParserUtility.subListsOfList(lines, 2);
+		for (List<String> mowerLine : mowerLines) {
+			mowers.add(mapToMower(mowerLine));
+		}
+		return mowers;
+	}
+
+	/**
+	 * split list to subList of size subListLength
+	 * @param sourceList ,subListLength
+	 * @return
+	 * @throws InvalidMowInstructionsException
+	 */
 	public static List<List<String>> subListsOfList(List<String> sourceList, int subListLength)
 			throws InvalidMowInstructionsException {
 		if (sourceList == null) {
@@ -25,23 +60,12 @@ public class ParserUtility {
 		return subLists;
 	}
 
-	public static Position parseTopRightRightCorner(String firstLine) throws InvalidMowInstructionsException {
-		try {
-			return parsePosition(firstLine);
-		} catch (Exception exception) {
-			throw new InvalidMowInstructionsException("Top right corner is missing !");
-		}
-	}
-
-	public static List<Mower> parseMowers(List<String> lines) throws InvalidMowInstructionsException {
-		List<Mower> mowers = new ArrayList<>();
-		List<List<String>> mowerLines = ParserUtility.subListsOfList(lines, 2);
-		for (List<String> mowerLine : mowerLines) {
-			mowers.add(mapToMower(mowerLine));
-		}
-		return mowers;
-	}
-
+	/**
+	 * map from lines to mower
+	 * @param mowerLines
+	 * @return
+	 * @throws InvalidMowInstructionsException
+	 */
 	public static Mower mapToMower(List<String> mowerLines) throws InvalidMowInstructionsException {
 		try {
 			Position mowerPosition = parsePosition(mowerLines.get(0));
@@ -55,6 +79,7 @@ public class ParserUtility {
 	}
 
 	/**
+	 * parse from string to position for mower position and for corner position
 	 * @param mowerLines
 	 * @return
 	 * @throws NumberFormatException

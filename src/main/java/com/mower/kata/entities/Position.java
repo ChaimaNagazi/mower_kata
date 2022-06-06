@@ -1,5 +1,7 @@
 package com.mower.kata.entities;
 
+import static com.mower.kata.entities.MowInstructions.topRightCorner;
+
 public class Position {
 
 	private int x;
@@ -11,7 +13,7 @@ public class Position {
 	}
 
 	public void incrementX() {
-		if ((x + 1) <= MowInstructions.topRightCorner.getX()) {
+		if ((x + 1) <= topRightCorner.getX()) {
 			x += 1;
 		}
 	}
@@ -23,7 +25,7 @@ public class Position {
 	}
 
 	public void incrementY() {
-		if ((y + 1) <= MowInstructions.topRightCorner.getY()) {
+		if ((y + 1) <= topRightCorner.getY()) {
 			y += 1;
 		}
 	}
@@ -40,6 +42,13 @@ public class Position {
 
 	public int getY() {
 		return y;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder strBuilder = new StringBuilder();
+		strBuilder.append(x).append(" ").append(y);
+		return strBuilder.toString();
 	}
 
 }
